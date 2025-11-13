@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, j, count = 0;
+    int isPrime;
+
+    // Input the number of elements
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    // Input the elements
+    printf("Enter the elements of the array:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Traverse the array to count prime numbers
+    for (i = 0; i < n; i++) {
+        if (arr[i] <= 1) {
+            continue; // 0 and 1 are not prime
+        }
+
+        isPrime = 1; // Assume arr[i] is prime
+        for (j = 2; j * j <= arr[i]; j++) {
+            if (arr[i] % j == 0) {
+                isPrime = 0; // Not prime
+                break;
+            }
+        }
+
+        if (isPrime) {
+            count++;
+        }
+    }
+
+    // Display the result
+    printf("Number of prime numbers in the array: %d\n", count);
+
+    return 0;
+}
