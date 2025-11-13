@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int scores[100], n, i;
+    int max, min;
+
+    // Input number of scores
+    printf("Enter the number of scores: ");
+    scanf("%d", &n);
+
+    // Input scores into the array
+    printf("Enter the scores:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &scores[i]);
+    }
+
+    // Initialize max and min with the first element
+    max = scores[0];
+    min = scores[0];
+
+    // Traverse the array to find max and min
+    for (i = 1; i < n; i++) {
+        if (scores[i] > max) {
+            max = scores[i];  // Update max if current element is larger
+        }
+        if (scores[i] < min) {
+            min = scores[i];  // Update min if current element is smaller
+        }
+    }
+
+    // Display the results
+    printf("Maximum score: %d\n", max);
+    printf("Minimum score: %d\n", min);
+
+    return 0;
+}
