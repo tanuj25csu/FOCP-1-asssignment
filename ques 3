@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+// Function to subtract two numbers using bitwise operators
+int subtract(int a, int b) {
+    // Use bitwise operations until there is no borrow
+    while (b != 0) {
+        // borrow contains common set bits of b and unset bits of a
+        int borrow = (~a) & b;
+
+        // Subtraction of bits of a and b where at least one of the bits is not set
+        a = a ^ b;
+
+        // Borrow is shifted by one so that subtracting it from a gives the required result
+        b = borrow << 1;
+    }
+    return a;
+}
+
+int main() {
+    int num1, num2;
+
+    // Input two numbers
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Display result
+    printf("Result of %d - %d = %d\n", num1, num2, subtract(num1, num2));
+
+    return 0;
+}
