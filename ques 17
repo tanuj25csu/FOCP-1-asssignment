@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i, pos;
+
+    // Input number of elements
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    // Input array elements
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Display original array
+    printf("Original array: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // Input position to delete (1 for front, n/2 for middle, n for end)
+    printf("Enter position of element to delete (1 to %d): ", n);
+    scanf("%d", &pos);
+
+    // Validate position
+    if (pos < 1 || pos > n) {
+        printf("Invalid position!\n");
+        return 1;
+    }
+
+    // Shift elements to the left from the deletion position
+    for (i = pos - 1; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    n--; // Decrease array size
+
+    // Display array after deletion
+    printf("Array after deletion: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
