@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int scores[100], even_array[100], odd_array[100];
+    int n, i, even_count = 0, odd_count = 0;
+
+    // Input number of scores
+    printf("Enter the number of scores: ");
+    scanf("%d", &n);
+
+    // Input the scores
+    printf("Enter the scores:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &scores[i]);
+    }
+
+    // Traverse the array and separate even and odd scores
+    for (i = 0; i < n; i++) {
+        if (scores[i] % 2 == 0) {       // Even score
+            even_array[even_count] = scores[i];
+            even_count++;
+        } else {                        // Odd score
+            odd_array[odd_count] = scores[i];
+            odd_count++;
+        }
+    }
+
+    // Display even scores
+    printf("Even scores: ");
+    for (i = 0; i < even_count; i++) {
+        printf("%d ", even_array[i]);
+    }
+    printf("\n");
+
+    // Display odd scores
+    printf("Odd scores: ");
+    for (i = 0; i < odd_count; i++) {
+        printf("%d ", odd_array[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
