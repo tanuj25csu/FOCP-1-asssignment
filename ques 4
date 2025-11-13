@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+
+    // Input two numbers
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b);
+
+    // Display original values
+    printf("\nBefore swapping: a = %d, b = %d", a, b);
+
+    // Swap using a temporary variable
+    temp = a;
+    a = b;
+    b = temp;
+
+    // Display swapped values
+    printf("\nAfter swapping: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+
