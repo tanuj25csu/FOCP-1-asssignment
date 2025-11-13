@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int marks[100], n, i, count = 0;
+
+    // Input number of students
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+
+    // Input marks for each student
+    printf("Enter the marks of students:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &marks[i]);
+    }
+
+    // Scan the array to find students who scored 99
+    printf("Students who scored 99 are at positions: ");
+    for (i = 0; i < n; i++) {
+        if (marks[i] == 99) {
+            printf("%d ", i + 1);  // Display position (1-based index)
+            count++;               // Increment counter
+        }
+    }
+
+    // Display the total number of students who scored 99
+    if (count > 0)
+        printf("\nTotal number of students who scored 99: %d\n", count);
+    else
+        printf("\nNo student scored 99.\n");
+
+    return 0;
+}
