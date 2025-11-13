@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int scores[100], n, i, found = 0;
+
+    // Input number of elements
+    printf("Enter the number of scores: ");
+    scanf("%d", &n);
+
+    // Input array elements
+    printf("Enter the scores:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &scores[i]);
+    }
+
+    // Linear search to find first occurrence of 99
+    for (i = 0; i < n; i++) {
+        if (scores[i] == 99) {
+            printf("The first occurrence of 99 is at position %d.\n", i + 1);
+            found = 1;
+            break; // stop after finding the first 99
+        }
+    }
+
+    // If 99 is not found
+    if (!found) {
+        printf("Score 99 not found in the list.\n");
+    }
+
+    return 0;
+}
